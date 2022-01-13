@@ -54,4 +54,7 @@ UINT8 ScrollFindTile(UINT8 map_bank, const struct MapInfo* map, UINT8 tile,
 	UINT8 start_x, UINT8 start_y, UINT8 w, UINT8 h,
 	UINT16* x, UINT16* y);
 
+
+void UPDATE_TILE_BY_VALUE(INT16 x, INT16 y, UINT8 t, UINT8* c);
+
 #endif

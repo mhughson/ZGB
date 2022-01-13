@@ -81,6 +81,55 @@ __asm
 __endasm;
 }
 
+void UPDATE_TILE_BY_VALUE(INT16 x, INT16 y, UINT8 t, UINT8* c)
+{
+	UINT8 replacement = t;
+	UINT8 i;
+	Sprite* s = 0;
+	UINT8 type = 255u;
+	UINT16 id = 0u;
+	UINT16 sprite_y;
+	c;
+
+	// if((UINT16)x >= scroll_tiles_w || (UINT16)y >= scroll_tiles_h) { //This also checks x < 0 || y < 0
+	// 	replacement = 0;
+	// } else {
+	// 	type = GetTileReplacement(t, &replacement);
+	// 	if(type != 255u) {
+	// 		id = SPRITE_UNIQUE_ID(x, y);
+	// 		for(i = 0u; i != sprite_manager_updatables[0]; ++i) {
+	// 			s = sprite_manager_sprites[sprite_manager_updatables[i + 1]];
+	// 			if((s->type == type) && (s->unique_id == id)) {
+	// 				break;
+	// 			}
+	// 		}
+
+	// 		if(i == sprite_manager_updatables[0]) {
+	// 			PUSH_BANK(spriteDataBanks[type]);
+	// 				sprite_y = ((y + 1) << 3) - spriteDatas[type]->height;
+	// 			POP_BANK;
+	// 			s = SpriteManagerAdd(type, x << 3, sprite_y);
+	// 		}
+	// 	}
+	// }
+
+	id = 0x9800 + (0x1F & (x + scroll_offset_x)) + ((0x1F & (y + scroll_offset_y)) << 5);
+	SetTile(id, replacement);
+	
+
+	#ifdef CGB
+		if (_cpu == CGB_TYPE) {
+			VBK_REG = 1;
+			if(!scroll_cmap || (0x10 & *c)) { //I am using bit 4 (unused) to select the default palette (the one stored on the tile)
+				i = scroll_tile_info[replacement];
+				c = &i;
+			}
+			set_bkg_tiles(0x1F & (x + scroll_offset_x), 0x1F & (y + scroll_offset_y), 1, 1, c);
+			VBK_REG = 0;
+		}
+	#endif
+}
+
 void UPDATE_TILE(INT16 x, INT16 y, UINT8* t, UINT8* c) {
 	UINT8 replacement = *t;
 	UINT8 i;
@@ -244,6 +293,8 @@ void InitScrollWithTiles(UINT8 map_bank, const struct MapInfo* map, UINT8 tiles_
 {
 	UINT8 i;
 	INT16 y;
+
+	last_bg_pal_loaded = 0;
 
 	ScrollSetTiles(0, tiles_info_bank, tiles_info);
 
@@ -472,3 +523,19 @@ done:
 	return found;
 }
 
+void ScrollRelocateMapTo(UINT16 new_x, UINT16 new_y) {
+    UINT8 i;
+    INT16 y;
+
+    // These are externs from scroll.h
+    // Update the
+    scroll_x = new_x;
+    scroll_y = new_y;
+
+    PUSH_BANK(scroll_bank);
+    y = new_y >> 3;
+    for(i = 0u; i != (SCREEN_TILE_REFRES_H) && y != scroll_h; ++i, y ++) {
+        ScrollUpdateRow((scroll_x >> 3) - SCREEN_PAD_LEFT,  y - SCREEN_PAD_TOP);
+    }
+    POP_BANK;
+}

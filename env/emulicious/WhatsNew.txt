@@ -1,7 +1,33 @@
 ==========
+2021-12-30
+==========
+- Added an option to the Trace Logger to disable logging of breakpoints
+- Added more font sizes to the Font Size menu (up to 24 Pt now)
+- Fixed an issue that could prevent the debugger from opening when the other files were missing (thanks to Jamey)
+- Fixed loading savestates for .pocket roms (thanks to BestPig)
+- Fixed an issue in the .noi parser that could slow down opening the Debugger
+- Fixed a bug in the RGBDS disassembler that could remove section headers (thanks to BestPig)
+- Fixed that the preference for dark/light theme was only respected when a highlighter was selected
+- Fixed an issue that could cause the PPU variables of the GB to be displyed incorrectly (thanks to bbbbbr)
+- Fixed a NullPointerException in the Variables Tab when using GNOME desktop theme (thanks to Under4MHz)
+- Fixed a bug that could prevent VS Code from connecting to Emulicious after it launched it
+
+==========
+2021-11-30
+==========
+- Added options for font configuration
+- Added an option to disable UI scaling
+- Added dark-themed syntax highlighters
+- Greatly improved the UI of the Debugger's Variables tab
+- Fixed a bug in the trace logger that could prevent it from logging instruction
+- Fixed that the Memory Editor did not accept entering capital hex letters (thanks to Revo)
+- Fixed font color in some debugger menus on Mac OS (thanks to Martz)
+
+==========
 2021-11-08
 ==========
 - Added cheats
+- Added support for Analoge Pocket roms
 - Added support for starting Emulicious with remote debugging enabled immediately
 
 ==========
