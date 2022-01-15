@@ -1,8 +1,0 @@
-type=instruction address=_FadeIn end=_FadeIn%20+%201 enabled=true suspend=true condition= message=
-type=instruction address=_FadeOut end=_FadeOut%20+%201 enabled=true suspend=true condition= message=
-type=instruction address=_test_bg_tile%20+%20801 end=_test_bg_tile%20+%20803 enabled=true suspend=true condition= message=
-type=instruction address=_test_bg_tile%20+%20804 end=_test_bg_tile%20+%20805 enabled=true suspend=true condition= message=
-type=instruction address=_go_to_state%20+%20291 end=_go_to_state%20+%20293 enabled=true suspend=true condition= message=
-type=instruction address=_clear_rows_in_data%20+%201321 end=_clear_rows_in_data%20+%201323 enabled=true suspend=true condition= message=
-type=instruction address=_clear_rows_in_data%20+%201330 end=_clear_rows_in_data%20+%201330 enabled=true suspend=true condition= message=
-type=instruction address=_fade_from_black%20+%209 end=_fade_from_black%20+%209 enabled=true suspend=true condition= message=
