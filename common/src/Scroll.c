@@ -12,7 +12,7 @@
 #define SCREEN_PAD_LEFT   1
 #define SCREEN_PAD_RIGHT  2
 #define SCREEN_PAD_TOP    1
-#define SCREEN_PAD_BOTTOM 2
+#define SCREEN_PAD_BOTTOM 3 // 2 Updated to 3 for From Below to account for screen splits adding 2.5 rows
 
 #define SCREEN_TILE_REFRES_W (SCREEN_TILES_W + SCREEN_PAD_LEFT + SCREEN_PAD_RIGHT)
 #define SCREEN_TILE_REFRES_H (SCREEN_TILES_H + SCREEN_PAD_TOP  + SCREEN_PAD_BOTTOM)
