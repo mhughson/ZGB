@@ -256,3 +256,5 @@ paket-files/
 //!env/*/bin/*
 //!env/make-3.81-bin/bin/
 env/emulicious/Emulicious.ini
+env/tools/gbmb18/gbmb.ini
+env/tools/gbtd22/gbtd.ini

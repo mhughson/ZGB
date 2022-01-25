@@ -81,7 +81,7 @@ __asm
 __endasm;
 }
 
-void UPDATE_TILE_BY_VALUE(INT16 x, INT16 y, UINT8 t, UINT8* c)
+void UPDATE_TILE_BY_VALUE(INT16 x, INT16 y, UINT8 t, UINT8 c)
 {
 	UINT8 replacement = t;
 	UINT8 i;
@@ -120,11 +120,11 @@ void UPDATE_TILE_BY_VALUE(INT16 x, INT16 y, UINT8 t, UINT8* c)
 	#ifdef CGB
 		if (_cpu == CGB_TYPE) {
 			VBK_REG = 1;
-			if(!scroll_cmap || (0x10 & *c)) { //I am using bit 4 (unused) to select the default palette (the one stored on the tile)
+			if(!scroll_cmap || (0x10 & c)) { //I am using bit 4 (unused) to select the default palette (the one stored on the tile)
 				i = scroll_tile_info[replacement];
-				c = &i;
+				c = i;
 			}
-			set_bkg_tiles(0x1F & (x + scroll_offset_x), 0x1F & (y + scroll_offset_y), 1, 1, c);
+			set_bkg_tiles(0x1F & (x + scroll_offset_x), 0x1F & (y + scroll_offset_y), 1, 1, &c);
 			VBK_REG = 0;
 		}
 	#endif
