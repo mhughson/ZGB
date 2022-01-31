@@ -1,4 +1,24 @@
 ==========
+2022-01-31
+==========
+- Added -fullscreen flag to start Emulicious in fullscreen (thanks to aoineko)
+- Added RDiM (Remaining Dots in Mode) register (thanks to Sono, tbsp and bbbbbr)
+- Added an option to disable hardware acceleration which can fix slowdowns on Windows 11 (thanks to SelvinPL)
+- Added an option to allow inputs from keyboard as well when a gamepad is used (thanks to Matt Hughson)
+- Improved usability of the Go To dialogs (thanks to BestPig)
+- Use a better color for selection in Memory Editor when using a dark color theme (thanks to Kabcorp)
+- Fixed missing tooltips in Registers table
+- Fixed a bug that could cause RAM symbols to show up twice in the Go To dialog (thanks to Eievui)
+- Fixed a misdetection of a Korean mapper on Mastersystem (thanks to Maxim)
+- Fixed a bug that could display a wrong color on Game Boy Color due to a missing cache update (thanks to BestPig)
+- Fixed a bug that could cause the disassembly to fail when a map file from a very old version of GBDK is present (thanks to BestPig)
+- Fixed an issue with savestates for .pocket roms (thanks to BestPig)
+- Fixed issues with C source-level debugging of banked devkitSMS roms (thanks to SteveProXNA)
+- Fixed a memory leak caused by closing/reopening remote debugging sessions (thanks to Matt Hughson)
+- Fixed a desync of the breakpoints table caused by closing/reopening the Debugger (thanks to BestPig and fracturetrey)
+- Fixed a bug that could cause loading RGBDS sources to take a lot longer (thanks to Sukus)
+
+==========
 2021-12-30
 ==========
 - Added an option to the Trace Logger to disable logging of breakpoints

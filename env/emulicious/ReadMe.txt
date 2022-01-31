@@ -13,7 +13,6 @@ PG Lomba - Visual identity design
 =================
 Required Runtimes
 =================
-
 Java 6 or newer:
 http://www.java.com
 
@@ -22,27 +21,11 @@ Commandline Commands
 ====================
 -muted = start without sound (can still be manually enabled, see controls below)
 -scale [level] = start with given zoom level
--link [address] = connects your Emulicious via link with the given address (e.g. "-link localhost" to connect to yourself) 
+-link [address] = connects your Emulicious via link with the given address (e.g. "-link localhost" to connect to yourself)
+-fullscreen = Start provided rom in fullscreen mode
+-set [key=value] = Set a property. E.g. "-set SMSFM=true"
 -throttle [speed] = throttles the speed to the given value in percent
 -disassemble [file] = Disassemble the provided file. If a directory is provided, all contained files are disassembled.
-
-=================
-Emulator Controls
-=================
-General:
-	Turbo on/off	- Space
-	Speed up	- Page Up
-	Speed down	- Page Down
-Graphics:
-	Zoom In			- +
-	Zoom Out		- -
-	Standardzoom		- 0
-	Increase frameskip	- ALT + Page Up
-	Decrease frameskip	- ALT + Page Down
-Sound:
-	Raise volume	- ALT with +
-	Lower volume	- ALT with -
-	Mute on/off	- ALT with 0
 
 =================
 Expressions
