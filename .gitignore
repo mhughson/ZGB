@@ -261,3 +261,4 @@ env/tools/gbtd22/gbtd.ini
 env/gbdk/examples/gb/*/*.gb
 env/gbdk/examples/gb/*/*.noi
 env/gbdk/examples/gb/*/*.map
+env/emulicious/screenshots/*
