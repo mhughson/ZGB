@@ -30,6 +30,14 @@ void main(void)
             /* Send 1 byte */
             printf("Sending b... ");
             _io_out = n++;
+
+            // Spammy version to behave like string version.
+            // do {
+            //     send_byte();
+            //     /* Wait for IO completion... */
+            //     while((_io_status == IO_SENDING) && (joypad() == 0));
+            // }while((_io_status != IO_IDLE) && (joypad() == 0));
+
             send_byte();
             /* Wait for IO completion... */
             while((_io_status == IO_SENDING) && (joypad() == 0));
