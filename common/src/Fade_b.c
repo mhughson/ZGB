@@ -8,6 +8,15 @@
 UWORD ZGB_Fading_BPal[32];
 UWORD ZGB_Fading_SPal[32];
 
+void fade_vbl_delay(UINT8 frames)
+{
+	static UINT8 i;
+	for (i = 0; i < frames; ++i)
+	{
+		wait_vbl_done();
+	}
+}
+
 UINT8 FadeInOp(UINT16 c, UINT16 i) {
 	return U_LESS_THAN(c, i) ? 0: (c - i);
 }
@@ -33,7 +42,10 @@ void FadeDMG(UINT8 fadeout) {
 			c = &colors[j << 2];
 			*pals[j] = PAL_DEF(FadeInOp(c[0], p), FadeInOp(c[1], p), FadeInOp(c[2], p), FadeInOp(c[3], p));
 		}
-		delay(50);
+		// CGB fades in 6 steps, 2 frames of delay each.
+		// DMG fades in 4 steps, 3 frames of delay each
+		// 120 frames total for both to keep in sync.
+		fade_vbl_delay(3);
 	}
 }
 
@@ -61,7 +73,7 @@ void FadeStepColor(UINT8 i) {
 		set_bkg_palette(pal, 1, palette);
 		set_sprite_palette(pal, 1, palette_s);
 	}
-	delay(20);
+	fade_vbl_delay(2);
 }
 
 void FadeInCOLOR() {
