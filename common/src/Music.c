@@ -1,4 +1,5 @@
 #include "Music.h"
+#include "cbtfx.h"
 
 #ifdef MUSIC_DRIVER_HUGE
 BYTE hUGE_paused = TRUE;
@@ -6,13 +7,15 @@ const hUGESong_t * hUGE_current_track;
 UBYTE hUGE_current_track_bank;
 
 void MusicCallback() __nonbanked {
-    if (hUGE_paused) 
-			return;
+    if (!hUGE_paused)
+	{
+		UBYTE __save = _current_bank;
+		SWITCH_ROM_MBC1(hUGE_current_track_bank);
+		hUGE_dosound();
+		SWITCH_ROM_MBC1(__save);
+	}
 
-    UBYTE __save = _current_bank;
-    SWITCH_ROM_MBC1(hUGE_current_track_bank);
-    hUGE_dosound();
-    SWITCH_ROM_MBC1(__save);
+	CBTFX_update();
 }
 
 void hUGE_mute(UBYTE mute) {
