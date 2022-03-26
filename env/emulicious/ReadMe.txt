@@ -22,6 +22,7 @@ Commandline Commands
 -muted = start without sound (can still be manually enabled, see controls below)
 -scale [level] = start with given zoom level
 -link [address] = connects your Emulicious via link with the given address (e.g. "-link localhost" to connect to yourself)
+-linkport [port] = specifies to port to use with the -link option (default is 5887, if not specified)
 -fullscreen = Start provided rom in fullscreen mode
 -set [key=value] = Set a property. E.g. "-set SMSFM=true"
 -throttle [speed] = throttles the speed to the given value in percent

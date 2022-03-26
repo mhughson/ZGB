@@ -1,4 +1,31 @@
 ==========
+2022-03-08
+==========
+- Added style options for the CPU Usage graph (thanks to Kabcorp)
+- Added options to specify the background color for sprite tiles in the Tile Viewer on MSX (thanks to toxa)
+- Fixed a bug that could cause TMS/legacy modes on Mastersystem to only show a black screen (thanks to Revo)
+- Fixed a bug in GameBoy's game link emulation that could cause one of the instances to lock up (Thanks to Matt Hughson)
+
+==========
+2022-02-28
+==========
+- Added option to hide the CPU usage graph
+- Added Compare and Comparator to Cheats (thanks to TheAlmightyGuru)
+- Added -linkport option to specify the port used for the Game Boy link cable (thanks to Junji Takakura)
+- Added VDP addresses to the Variables tree (thanks to toxa)
+- Added VDP labels to the Memory Editor
+- Added support for ld d,d debugging messages for the remaining systems (thanks to bbbbbr)
+- Improved usability of the Cheats window (thanks to Revo)
+- Persist the selected tab in the Video Viewer
+- Fixed the VRAM address shown for tiles of the TMS modes in the Tile Viewer
+- Fixed support for watchpoint set from the I/O tab of the Memory Editor for Game Boy
+- Fixed a bug that could cause an incorrect state of the debugger's toolbar after loading a state (thanks to JoseJX)
+- Fixed a rendering issue of the status bar of the Memory Editor (thanks to Kabcorp)
+- Fixed that the color cache did not get invalidated when manually changing CGB palettes (thanks to Eievui and Sono)
+- Fixed a bug that could cause C source-level debugging not to work with MSX (thanks to Mallow)
+- Fixed a bug that could cause global variables from SDCC sources to display wrong values (thanks to joyrider3774)
+
+==========
 2022-01-31
 ==========
 - Added -fullscreen flag to start Emulicious in fullscreen (thanks to aoineko)
