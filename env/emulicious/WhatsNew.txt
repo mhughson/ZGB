@@ -1,4 +1,22 @@
 ==========
+2022-04-07
+==========
+- Fixed hex values displayed for negative values in the Sprite Viewer (thanks to Maxim)
+- Fixed crash of the debugger when loading a different ROM
+
+==========
+2022-04-06
+==========
+- Fixed a bug that caused input to stop working on Mac OS (thanks to NoFr1ends)
+- Fixed an issue that could cause debugging of code in WRAM on Game Boy Color to misbehave (thanks to bbbbbr)
+- Fixed an issue with resizing the window when a non 1:1 PAR is selected
+
+==========
+2022-04-05
+==========
+- Fixed a bug that could cause MSX2SMS conversions and SG-1000 games not to boot (thanks to Revo and Under4Mhz)
+
+==========
 2022-04-01
 ==========
 - Fixed a bug that could cause Game Gear games not to boot (thanks to thatawesomeguy)

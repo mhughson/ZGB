@@ -83,6 +83,16 @@ void FadeInCOLOR() {
 	}
 }
 
+void FadeInStep_b(UINT8 step) BANKED
+{
+#ifdef CGB
+	if (_cpu == CGB_TYPE) {
+		FadeStepColor(step);
+	} else
+#endif
+		FadeInDMG(); // todo: unsupported.
+}
+
 void FadeIn_b() BANKED{
 #ifdef CGB
 	if (_cpu == CGB_TYPE) {

@@ -7,4 +7,6 @@ extern UINT8 fade_bank;
 void FadeIn();
 void FadeOut();
 
+void FadeInStep(UINT8 step);
+
 #endif
