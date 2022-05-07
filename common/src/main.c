@@ -13,6 +13,10 @@
 #include "Palette.h"
 #include <gb/cgb.h>
 
+#ifdef USE_SAVEGAME
+	#include "savegame.h"
+#endif
+
 extern UINT8 next_state;
 
 UINT8 delta_time;
@@ -97,6 +101,16 @@ __endasm;
 extern UINT8 last_bg_pal_loaded;
 UINT16 default_palette[] = {RGB(31, 31, 31), RGB(20, 20, 20), RGB(10, 10, 10), RGB(0, 0, 0)};
 void main() {
+
+	// this delay is required for PAL SNES SGB border commands to work
+	for (UINT8 i = 4; i != 0; i--) {
+		wait_vbl_done();
+	}
+
+#ifdef USE_SAVEGAME
+	CheckSRAMIntegrity((UINT8*)&savegame, sizeof(Savegame));
+#endif
+
 #ifdef CGB
 	UINT8 i;
 	cpu_fast();

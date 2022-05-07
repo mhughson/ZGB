@@ -1,4 +1,21 @@
 ==========
+2022-05-03
+==========
+- Fixed a regression that could cause loading savestates on Master System games to crash (thanks to Atmostfear)
+- Fixed an issue int the Event Viewer that could cause it to update more often than it should (thanks to Eievui)
+- Fixed a regression that could in rare cases cause Master System games to display a wrong color (thanks to Atmostfear)
+
+==========
+2022-04-30
+==========
+- Added Event Viewer
+- Added some notes on troubleshooting to the ReadMe.txt
+- Allow pressing Reset in the Profiler while it's enabled (thanks to bbbbbr)
+- Fixed that sometimes a wrong value was displayed as old value for HRAM writes
+- Fixed missing local variables in of functions defined in included .c files (thanks to djlink)
+- Fixed a memory leak in the Trace Logger window (thanks to Revo)
+
+==========
 2022-04-07
 ==========
 - Fixed hex values displayed for negative values in the Sprite Viewer (thanks to Maxim)
