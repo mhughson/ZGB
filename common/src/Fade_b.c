@@ -45,7 +45,7 @@ void FadeDMG(UINT8 fadeout) {
 		// CGB fades in 6 steps, 2 frames of delay each.
 		// DMG fades in 4 steps, 3 frames of delay each
 		// 120 frames total for both to keep in sync.
-		fade_vbl_delay(3);
+		fade_vbl_delay(1);
 	}
 }
 
