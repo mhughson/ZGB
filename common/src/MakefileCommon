@@ -57,6 +57,8 @@ else
 	CFLAGS += -DUSE_SAVEGAME
 endif
 
+BINFLAGS += -yn "$(PROJECT_TITLE)"
+
 # DMG/Color flags
 EXTENSION = gb
 ifneq (,$(findstring Color,$(BUILD_TYPE)))
