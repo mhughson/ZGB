@@ -60,19 +60,24 @@ UWORD UpdateColor(UINT8 i, UWORD col) {
 
 void FadeStepColor(UINT8 i) {
 	UINT8 pal, c;
-	UWORD palette[4];
-	UWORD palette_s[4];
+	UWORD palette[4*8];
+	UWORD palette_s[4*8];
 	UWORD* col = ZGB_Fading_BPal;
 	UWORD* col_s = ZGB_Fading_SPal;
 
 	for(pal = 0; pal < 8; pal ++) {
 		for(c = 0; c < 4; ++c, ++col, ++col_s) {
-				palette[c] = UpdateColor(i, *col);
-				palette_s[c] = UpdateColor(i, *col_s);
+				palette[c + (pal*4)] = UpdateColor(i, *col);
+				palette_s[c + (pal*4)] = UpdateColor(i, *col_s);
 		};
-		set_bkg_palette(pal, 1, palette);
-		set_sprite_palette(pal, 1, palette_s);
 	}
+
+	// Wait for vblank so that we don't start the fade in the middle
+	// of the screen.
+	fade_vbl_delay(1);
+	// Apply all 8 palettes at the exact same time.
+	set_bkg_palette(0, 8, palette);
+	set_sprite_palette(0, 8, palette_s);
 	fade_vbl_delay(2);
 }
 
