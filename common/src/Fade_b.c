@@ -28,6 +28,9 @@ void FadeDMG(UINT8 fadeout) {
 	UINT8* c = colors;
 	UINT8 p;
 
+	// needed to be moved from game code for CGB, so DNG does it here too.
+	DISPLAY_ON;
+
 	//Pick current palette colors
 	for(i = 0; i != 3; ++i) {
 		p = (UINT8)*(pals[i]);
@@ -75,6 +78,10 @@ void FadeStepColor(UINT8 i) {
 	// Wait for vblank so that we don't start the fade in the middle
 	// of the screen.
 	fade_vbl_delay(1);
+	// display gets turned off in game code after the fade out.
+	// This is here (rather than game code) to avoid seeing the partially
+	// faded out screen for a frame when we vbl_delay above.
+	DISPLAY_ON;
 	// Apply all 8 palettes at the exact same time.
 	set_bkg_palette(0, 8, palette);
 	set_sprite_palette(0, 8, palette_s);

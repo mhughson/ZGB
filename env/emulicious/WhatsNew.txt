@@ -1,4 +1,22 @@
 ==========
+2022-05-31
+==========
+- Added filter for reads to the Event Viewer
+- Added support for multi-byte symbols from tbl files (thanks to borkitall)
+- Added configurable keyboard shortcuts for exit and screenshot (thanks to Under4Mhz)
+- Minor speedup of Game Boy emulation
+- Better handle PUSHS/POPS in Outline (thanks to Eievui)
+- Fixed that for the SMS/MSX VDP old value and new value were swapped in the Event Viewer (thanks to sverx)
+- Fixed a layout issue on Mac OS (thanks to vinheim3)
+- Fixed a layout issue with the registers table (thanks to bbbbbr)
+- Fixed a layout issue with the expressions table on Ubuntu (thanks to bbbbbr)
+- Fixed a sound resampling issue (thanks to alexmush)
+- Fixed that the savestates did not correctly restore the state of the SMS audio mixer (thanks to alexmush)
+- Fixed an issue that could prevent the Profile From Line option to add a profiler (thanks to bbbbbr)
+- Fixed an issue that made signed C types display unsigned values in the VS Code adapter (thanks to Eric Abroad)
+- Fixed an issue that could lead to unmapped lines when using RGBDS's FOR directive (thanks to rondnelson99)
+
+==========
 2022-05-03
 ==========
 - Fixed a regression that could cause loading savestates on Master System games to crash (thanks to Atmostfear)
