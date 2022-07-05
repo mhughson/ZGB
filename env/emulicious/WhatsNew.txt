@@ -1,4 +1,22 @@
 ==========
+2022-07-01
+==========
+- Fixed an issue that could cause the Event Viewer to lag on selections
+
+==========
+2022-06-30
+==========
+- Added sound recording (thanks to Kabcorp)
+- Added option to enable/disable high-pass filter for Game Boy (thanks to Kabcorp)
+- Improved visibily of theme options by also adding them to the Appearance menu (thanks to Chong)
+- Combined the emulation menus for Game Boy and Game Boy Color
+- Made key shortcuts for exit and screenshot configurable (thanks to Under4MHz)
+- Also display referenced values for instructions operating on 2-bytes (thanks to sverx)
+- Fixed an issue with the stack view when debugging on MSX (thanks to aoineko)
+- Fixed an issue that could cause local variables to be missing with C debugging (thanks to Studio Loading)
+- Fixed that the main window key shortcuts did not work on the debugger anymore (thanks to tbsp)
+
+==========
 2022-05-31
 ==========
 - Added filter for reads to the Event Viewer
