@@ -12,10 +12,15 @@
 #include "Fade.h"
 #include "Palette.h"
 #include <gb/cgb.h>
+#include "SGB.h"
 
 #ifdef USE_SAVEGAME
 	#include "savegame.h"
 #endif
+
+// Game border in engine code... yuck but needed to avoid background
+// glitch on startup.
+IMPORT_MAP(gb_border);
 
 extern UINT8 next_state;
 
@@ -106,6 +111,10 @@ void main() {
 	for (UINT8 i = 4; i != 0; i--) {
 		wait_vbl_done();
 	}
+
+	// Load the GB border here (rather than game code) to avoid glitch on
+	// startup.
+	LOAD_SGB_BORDER(gb_border);
 
 #ifdef USE_SAVEGAME
 	CheckSRAMIntegrity((UINT8*)&savegame, sizeof(Savegame));

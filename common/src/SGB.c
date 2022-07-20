@@ -63,10 +63,20 @@ void set_sgb_border(unsigned char * tiledata, size_t tiledata_size,
 
         LCDC_REG = tmp_lcdc;
 
+        // Ensure that Tile 0 is an empty square. It won't be by default.
+        // Reusing map_buf.
+        memset(map_buf, 0, sizeof(map_buf));
+        set_bkg_data(0, 1, map_buf);
+
         // clear SCREEN
         fill_bkg_rect(0, 0, 20, 18, 0);
         
         SGB_TRANSFER((SGB_MASK_EN << 3) | 1, SGB_SCR_UNFREEZE); 
+
+        // Give it time to clear the whole screen, and avoid only part of it appearing blank.
+        for (UINT8 i = 2; i != 0; i--) {
+		    wait_vbl_done();
+	    }
     }
 }
 
