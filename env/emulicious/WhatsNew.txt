@@ -1,4 +1,37 @@
 ==========
+2022-09-10
+==========
+- Fixed false positive on nested interrupts in the interrupt exception (thanks to Eievui, asie)
+- Fixed an issue with modal dialogs (e.g. Configure Input) on Mac OS (thanks to Snoopdroop, armixer24)
+- Slightly reduced startup time
+
+==========
+2022-08-31
+==========
+- Added sorting by column to RAM Search tool and added a right-click menu (thanks to Crash)
+- Fixed issue with watch expressions in remote debugging displaying the same subvariables (thanks to Banks)
+- Fixed tracking of uninitialized memory on MSX (thanks to wimpie3)
+- Fixed that saving wasn't possible from all tabs of the Memory Editor (thanks to klop)
+- Fixed an issue with parsing ELIF in sources compiled with RGBDS (thanks to FIQ)
+- Fixed palettes displayed in Palette Viewer in Game Boy Color's DMG mode (thanks to bbbbbr)
+- Fixed an issue with sprite mixing on MSX2 (thanks to aoineko, bengalack)
+- Fixed a regression with CRAM writes on Game Gear (thanks to Maxim, Revo)
+
+==========
+2022-07-31
+==========
+- Added MSX2 emulation
+- Improved scoping of C local variables in VS Code (thanks to Streuwinkel)
+- Improved parsing of Sjasm lst files (thanks to bas)
+- Made pause shortcut configurable (thanks to Kabcorp)
+- Fixed an issue with persisting window positions at the left edge of the screen (thanks to aoineko)
+- Fixed that the Memory Editor did sometimes not open when clicking a VRAM address in the viewers (thanks to bas)
+- Fixed an issue with negative numbers in VS Code
+- Fixed an issue in C debugging with files containing spaces or dashes (thanks to Streuwinkel)
+- Fixed a bug in Game Boy noise channel emulation that could cause audible clicks (thanks to tbsp, Matt Hughson)
+- Fixed the value displayed for the Z80's R register (thanks to sverx)
+
+==========
 2022-07-01
 ==========
 - Fixed an issue that could cause the Event Viewer to lag on selections
